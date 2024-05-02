@@ -10,7 +10,7 @@ interface IUserInformation {
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -19,12 +19,12 @@ export class LoginComponent implements OnInit {
   // constructor(private router: Router) { }
   form!: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router :Router) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password:['',[Validators.required]]
+      password: ['', [Validators.required]]
     });
   }
 
@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
 
     // display form values on success
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
+    localStorage.setItem('userLogin', JSON.stringify(this.form.value));
+    this.router.navigateByUrl('')
   }
 
   onReset() {

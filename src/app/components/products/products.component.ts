@@ -122,4 +122,20 @@ export class ProductsComponent {
       laundry: true
     }
   ];
+
+  addCard(id: number) {
+    let listCard = localStorage.getItem('listProduct');
+    const card = this.housingLocationList.find((e) => e.id == id)
+
+    if (!listCard) {
+      const listCard = [card];
+      localStorage.setItem('listProduct', JSON.stringify(listCard))
+
+    }
+    else {
+      let value: HousingLocation[] = JSON.parse(listCard) as HousingLocation[];
+      card ? value = [...value, card] : null;
+      localStorage.setItem('listProduct', JSON.stringify(value))
+    }
+  }
 }
