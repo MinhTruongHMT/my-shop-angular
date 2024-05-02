@@ -1,0 +1,75 @@
+.list-product {
+    /* display: flex;
+    margin: 10px; */
+}
+
+.product {
+    /* height: 100px;
+    width: 100px; */
+}
+
+.image-product {
+    /* width: 150px;
+    height: 200px;
+    object-fit: cover; */
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    max-height: 450px;
+    text-align: center;
+    font-family: arial;
+}
+
+.name {
+    font-size: 20px;
+    height: 50px;
+}
+
+.price {
+    color: grey;
+    font: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.card img {
+    width: 190px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.infomation {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 24px;
+    /* Chiều cao dòng */
+    max-height: 72px;
+    /* Chiều cao tối đa */
+    -webkit-line-clamp: 1;
+    /* Số dòng hiển thị */
+}
+
+@media only screen and (max-width: 768px){
+    .list-product{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

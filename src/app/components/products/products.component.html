@@ -1,0 +1,17 @@
+<h2>List Product</h2>
+<div class="container ">
+    <div class="row ">
+        <div *ngFor="let item of housingLocationList" class="col list-product">
+            <div class="card">
+                <img [src]="item.photo" alt="image" />
+                <h1 class="name"> {{item.name}}</h1>
+                <p class="price">${{item.id}}</p>
+                <p class="infomation">Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem
+                    jeamsun denim lorem
+                    jeansum.</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+
+    </div>
+</div>

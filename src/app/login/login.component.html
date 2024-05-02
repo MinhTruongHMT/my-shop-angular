@@ -1,0 +1,32 @@
+<div class="pageLogin">
+  <h1 class="page-lable">Login page</h1>
+  <div class="user-information-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- EMAIL -->
+      <label class="form-label">Email</label>
+      <input type="text" formControlName="email" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+
+      <!-- EMAIL VALIDATE -->
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>
+
+      <!-- PASSWORD -->
+      <label class="form-label">Password</label>
+      <input type="text" formControlName="password" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <!-- PASSWORD VALIDATE -->
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+
+      <!-- BUTTON SUBMIT AND RESET -->
+      <div class="text-center">
+        <button class="btn btn-primary me-2">Submit</button>
+        <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.pageLogin {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-information-form {
+    width: 50%;
+}
+
+.page-lable {
+    display: inline-block;
+}
